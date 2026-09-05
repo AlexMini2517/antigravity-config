@@ -3,6 +3,14 @@ const fs = require('fs');
 // Rules are evaluated top-down — first match wins.
 // All risky commands prompt the user for confirmation (ask), nothing is hard-blocked.
 const RULES = [
+  // --- SAFE: always allow ---
+  { pattern: /\bpnpm\s+exec\s+tsc\s+--noEmit\b/i, action: "allow", reason: "safe command (pnpm exec tsc --noEmit)" },
+  { pattern: /\bpnpm\s+lint\b/i, action: "allow", reason: "safe command (pnpm lint)" },
+  { pattern: /\bgit\s+log\b/i, action: "allow", reason: "safe command (git log)" },
+  { pattern: /\bgit\s+show\b/i, action: "allow", reason: "safe command (git show)" },
+  { pattern: /\bgit\s+status\s+--short\b/i, action: "allow", reason: "safe command (git status --short)" },
+  { pattern: /\bgit\s+status\b/i, action: "allow", reason: "safe command (git status)" },
+
   // --- HIGH RISK: always ask ---
 
   // Recursive deletes
