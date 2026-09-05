@@ -1,7 +1,7 @@
 {
   "powershell-guard": {
     "enabled": true,
-    "BeforeTool": [
+    "PreToolUse": [
       {
         "matcher": "run_command",
         "hooks": [

@@ -4,7 +4,7 @@ My personal [Google Antigravity](https://github.com/google-gemini/gemini-cli) co
 
 ## 🛡️ PowerShell Guard Hook
 
-A `BeforeTool` hook that intercepts every `run_command` call and checks it against a list of risky patterns before execution.
+A `PreToolUse` hook that intercepts every `run_command` call and checks it against a list of risky patterns before execution.
 
 - **Safe commands** → executed directly, no prompt
 - **Risky commands** → asks for user confirmation before proceeding
@@ -16,7 +16,7 @@ A `BeforeTool` hook that intercepts every `run_command` call and checks it again
 
 | File | Description |
 |---|---|
-| `hooks.json` | Hook configuration — registers the guard as a `BeforeTool` hook on `run_command` |
+| `hooks.json` | Hook configuration — registers the guard as a `PreToolUse` hook on `run_command` |
 | `hooks/powershell-guard.js` | The guard script (~95 lines) — pattern-matched rules with `ask` decisions |
 | `README.md` | This file |
 
