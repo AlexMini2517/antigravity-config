@@ -13,5 +13,30 @@
         ]
       }
     ]
+  },
+  "read-only-guard": {
+    "enabled": true,
+    "PreToolUse": [
+      {
+        "matcher": "write_to_file|replace_file_content|multi_replace_file_content|run_command",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node hooks/read-only-guard.js",
+            "timeout": 5000
+          }
+        ]
+      }
+    ]
+  },
+  "md-log": {
+    "enabled": true,
+    "PostInvocation": [
+      {
+        "type": "command",
+        "command": "node hooks/md-log.js",
+        "timeout": 15
+      }
+    ]
   }
 }
