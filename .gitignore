@@ -1,12 +1,3 @@
-# Machine-specific and sensitive configurations
-mcp_config.json
-config.json
-md-log.json
-.migrated
-.read-only
-
-# Local links, workspace caches, and plugins
-plugins/
-projects/
-skills/
-skills
+/*
+!/hooks
+!README.md
